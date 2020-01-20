@@ -53,7 +53,7 @@ function OldSchoolMenuLink({ label, to, activeOnlyWhenExact }) {
   });
 
   return (
-    <div className={match ? "active" : ""}>
+    <div className={match ? "active m-4" : "m-4"}>
       {match && "> "}
       <Link to={to}>{label}</Link>
     </div>
@@ -76,7 +76,7 @@ function AuthButton() {
   let history = useHistory();
 
   return fakeAuth.isAuthenticated ? (
-    <>
+    <div className="m-4">
       <h1>Welcome!!!</h1>
       <button
         onClick={() => {
@@ -85,9 +85,9 @@ function AuthButton() {
       >
         Sign out
       </button>
-    </>
+    </div>
   ) : (
-    <p>You are not logged in.</p>
+    <p className="m-4">You are not logged in.</p>
   );
 }
 
@@ -103,7 +103,7 @@ function LoginPage() {
   };
 
   return (
-    <div>
+    <div className="m-4">
       <p>You must log in to view the page at {from.pathname}</p>
       <button onClick={login}>Log in</button>
     </div>
@@ -113,7 +113,7 @@ function LoginPage() {
 function PrivateRoute({ children, ...rest }) {
   let { path, url } = useRouteMatch();
   return fakeAuth.isAuthenticated ? (
-    <>
+    <div className="m-4">
       <h2>Please select a topic.</h2>
       <ul>
         <li>
@@ -131,7 +131,7 @@ function PrivateRoute({ children, ...rest }) {
           <Drawing />
         </Route>
       </Switch>
-    </>
+    </div>
   ) : (
     <Redirect
       to={{
@@ -147,7 +147,7 @@ function Drawing() {
   // us build relative links.
   let { path, url } = useRouteMatch();
   return (
-    <div>
+    <div className="m-4">
       <h3>Topics</h3>
       <ul>
         <li>
