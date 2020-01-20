@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Routing-And-Drawing/static/css/main.b110d5e9.chunk.css",
+    "main.js": "/Routing-And-Drawing/static/js/main.d400ce8f.chunk.js",
+    "main.js.map": "/Routing-And-Drawing/static/js/main.d400ce8f.chunk.js.map",
+    "runtime-main.js": "/Routing-And-Drawing/static/js/runtime-main.1e0167f6.js",
+    "runtime-main.js.map": "/Routing-And-Drawing/static/js/runtime-main.1e0167f6.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/Routing-And-Drawing/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.ec66e072.chunk.js": "/Routing-And-Drawing/static/js/2.ec66e072.chunk.js",
+    "static/js/2.ec66e072.chunk.js.map": "/Routing-And-Drawing/static/js/2.ec66e072.chunk.js.map",
+    "index.html": "/Routing-And-Drawing/index.html",
+    "precache-manifest.51e9288bc657938ed02c51cdabc15371.js": "/Routing-And-Drawing/precache-manifest.51e9288bc657938ed02c51cdabc15371.js",
+    "service-worker.js": "/Routing-And-Drawing/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/Routing-And-Drawing/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.b110d5e9.chunk.css.map": "/Routing-And-Drawing/static/css/main.b110d5e9.chunk.css.map",
+    "static/js/2.ec66e072.chunk.js.LICENSE": "/Routing-And-Drawing/static/js/2.ec66e072.chunk.js.LICENSE",
+    "static/media/LiSEC_eye.jpg": "/Routing-And-Drawing/static/media/LiSEC_eye.677ff40b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e0167f6.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.ec66e072.chunk.js",
+    "static/css/main.b110d5e9.chunk.css",
+    "static/js/main.d400ce8f.chunk.js"
+  ]
+}
