@@ -11,6 +11,7 @@ export default class Upload extends Component {
       hex: ""
     };
   }
+
   fileChangedHandler = event => {
     const { selectedFile } = this.state;
     let reader = new FileReader();

@@ -41,7 +41,7 @@ export default function Routing() {
         <OldSchoolMenuLink
           activeOnlyWhenExact={true}
           to="/protected"
-          label={fakeAuth.isAuthenticated === true ? "Login to Page" : "asdasd"}
+          label="Login page"
         />
 
         <hr />
