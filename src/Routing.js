@@ -14,24 +14,40 @@ import Svg from "./Svg";
 import Canvas from "./Canvas";
 import Upload from "./Upload";
 
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    fakeAuth.isAuthenticated = true;
+    setTimeout(cb, 300); // fake async
+  },
+  signout(cb) {
+    fakeAuth.isAuthenticated = false;
+    setTimeout(cb, 300);
+  }
+};
+
 export default function Routing() {
   return (
     <Router>
       <div>
         <AuthButton />
         <hr />
-        <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="Home" />
+        <OldSchoolMenuLink
+          activeOnlyWhenExact={true}
+          to="/Routing-And-Drawing"
+          label="Home"
+        />
 
         <OldSchoolMenuLink
           activeOnlyWhenExact={true}
           to="/protected"
-          label="Login Page"
+          label={fakeAuth.isAuthenticated === true ? "Login to Page" : "asdasd"}
         />
 
         <hr />
 
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/Routing-And-Drawing">
             <App />
           </Route>
           <Route path="/login">
@@ -60,18 +76,6 @@ function OldSchoolMenuLink({ label, to, activeOnlyWhenExact }) {
   );
 }
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    fakeAuth.isAuthenticated = true;
-    setTimeout(cb, 300); // fake async
-  },
-  signout(cb) {
-    fakeAuth.isAuthenticated = false;
-    setTimeout(cb, 300);
-  }
-};
-
 function AuthButton() {
   let history = useHistory();
 
@@ -80,7 +84,7 @@ function AuthButton() {
       <h1>Welcome!!!</h1>
       <button
         onClick={() => {
-          fakeAuth.signout(() => history.push("/"));
+          fakeAuth.signout(() => history.push("/Routing-And-Drawing"));
         }}
       >
         Sign out
@@ -115,14 +119,19 @@ function PrivateRoute({ children, ...rest }) {
   return fakeAuth.isAuthenticated ? (
     <div className="m-4">
       <h2>Please select a topic.</h2>
-      <ul>
-        <li>
-          <Link to={`${url}/upload`}>Upload file</Link>
-        </li>
-        <li>
-          <Link to={`${url}/drawing`}>Drawing tools</Link>
-        </li>
-      </ul>
+
+      <OldSchoolMenuLink
+        activeOnlyWhenExact={true}
+        to={`${url}/upload`}
+        label="Upload"
+      />
+
+      <OldSchoolMenuLink
+        activeOnlyWhenExact={true}
+        to={`${url}/drawing`}
+        label="Drawing tools"
+      />
+
       <Switch>
         <Route exact path={`${path}/upload`}>
           <Upload />
@@ -149,14 +158,17 @@ function Drawing() {
   return (
     <div className="m-4">
       <h3>Topics</h3>
-      <ul>
-        <li>
-          <Link to={`${url}/svg`}>Rendering SVG</Link>
-        </li>
-        <li>
-          <Link to={`${url}/canvas`}>Rendering Canvas</Link>
-        </li>
-      </ul>
+      <OldSchoolMenuLink
+        activeOnlyWhenExact={true}
+        to={`${url}/svg`}
+        label="Rendering SVG"
+      />
+
+      <OldSchoolMenuLink
+        activeOnlyWhenExact={true}
+        to={`${url}/canvas`}
+        label="Rendering Canvas"
+      />
 
       <Switch>
         <Route exact path={`${path}/svg`}>
